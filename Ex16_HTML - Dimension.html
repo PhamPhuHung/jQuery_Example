@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  #div1 {
+    height: 250px;
+    width: 500px;
+    padding: 20px;
+    border: 10px solid blue;
+    margin: 5px;
+    background-color: lightblue;
+  }
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#ex1_getdimension").click(function(){
+      var txt = "";
+      var div1 = $("#div1");
+      txt += "Width: " + div1.width() + "<br>";
+      txt += "Height: " + div1.height() + "<br>";
+      txt += "Inner Width: " + div1.innerWidth() + "<br>";
+      txt += "Inner Height: " + div1.innerHeight() + "<br>";
+      txt += "Outer Width: " + div1.outerWidth() + "<br>";
+      txt += "Outer Height: " + div1.outerHeight() + "<br>";
+      txt += "Outer Width (true): " + div1.outerWidth(true) + "<br>";
+      txt += "Outer Height (true): " + div1.outerHeight(true) + "<br>";
+      div1.html(txt);
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery Dimension Methods</h3>
+  <p>jQuery has several important methods for working with dimensions:</p>
+  <ul>
+    <li><code>width()</code> 		- sets/returns the width of an element (excludes padding, border, margin)</li>
+    <li><code>height()</code> 		- sets/returns the height of an element (excludes padding, border, margin)</li>
+    <li><code>innerWidth()</code> 	- sets/returns the width of an element (includes padding)</li>
+    <li><code>innerHeight()</code> 	- sets/returns the height of an element (includes padding)</li>
+    <li><code>outerWidth()</code> 	- sets/returns the width of an element (includes padding & border)</li>
+    <li><code>outterHeight()</code> 	- sets/returns the height of an element (includes padding & border)</li>
+    <li><code>outerWidth(true)</code> 	- returns the width of an element (includes padding, border & margin)</li>
+    <li><code>outterHeight(true)</code> - returns the height of an element (includes padding, border & margin)</li>
+  </pre>
+</div>
+4:41 PM 4/28/2021
+<div class="container">
+  <h3>jQuery Dimensions</h3>
+  <img class="img-responsive center-block" src="img/img_jquerydim.gif" alt="jQuery Dimensions">
+</div>
+
+<div class="container">
+  <h3>Get Dimensions</h3>
+  <div class="container" style="border:1px solid #aaa; padding:5px">
+    <div id="div1"></div>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex1_getdimension">Get Dimension</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

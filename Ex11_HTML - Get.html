@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  .box {
+    background-color:#98bf21;
+    width:100px;
+    height:100px;
+    position: absolute;
+    text-align: center;
+  }
+  .flip, .panel {
+    color: white;
+    background-color: #555;
+    width: 100%;
+    margin: 0; 
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #333;
+  }
+  
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#text").click(function(){
+      alert("Text: " + $("#ex1").text());
+    });
+
+    $("#html").click(function(){
+      alert("HTML: " + $("#ex1").html());
+    });
+
+    $("#val").click(function(){
+      alert("Value: " + $("#ex2").val());
+    });
+
+    $("#attr").click(function(){
+      alert($("#w3s").attr("href"));
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery - Get Content and Attributes</h3>
+  <p>jQuery contains powerful methods for changing and manipulating HTML elements and attributes</p>
+</div>
+
+<div class="container">
+  <h3>jQuery DOM Manipulation</h3>
+  <p>One very important part ò jQuery í the possibility to manipulate the DOM</p>
+  <p>jQuery comes with a bunch of DOM related methods that make it easy to access and manipulate elements and attribute</p>
+  <div style="padding:30px; margin:5px; background-color:lightyellow">
+    <b>DOM = Document Object Model</b><br>
+    <p>The DOM defines a standard for accessing HTML and XML documents:</p>
+    <p><i>"The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dunamically access and update the content, structure, and style of a document"</i></p>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Get Content - text(), html(), and val()</h3>
+  <p>Three simple, but useful, jQuery methods for DOM manipulation are:</p>
+  <ul>
+    <li><code>text()</code> - Sets or returns the text content of selected elements</li>
+    <li><code>html()</code> - Sets or returns the content of selected elements (including HTML markup)</li>
+    <li><code>val()</code> - Sets or returns the value of form field</li>
+  </ul>
+  <p>The following example demonstrates how to get content with the jQuery <code>text()</code> and <code>html()</code> methods:</p>
+  <p id="ex1">This is some <b>bold</b> text in a paragraph</p>
+  <div class="form-group">
+    <button type="button" class="btn btn-info" id="text">Show text()</button>
+    <button type="button" class="btn btn-info" id="html">Show html()</button>
+  </div><br>
+  <p>The following example demonstrates how to get the value of an input field with the jQuery <code>val()</code> method:</p>
+  <div class="form-group">
+    <input type="text" class="form-control" id="ex2" value="Mickey Mouse"><br>
+    <button type="button" class="btn btn-info" id="val">Show val()</button>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Get Attributes - attr()</h3>
+  <p>The jQuery <code>attr()</code> method is used to get attribute values</p>
+  <p>The following example demonstrates how to get the value of the href attribute in a link</p>
+  <a href="https://www.w3schools.com" id="w3s">W3Schools.com</a>
+  <div class="form-group">
+    <button type="button" class="btn btn-info" id="attr">Show href</button>
+  </div>
+</div>
+</body>
+</html>

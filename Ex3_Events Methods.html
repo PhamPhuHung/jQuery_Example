@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <p>jQuery is tailor-made to respond to events in an HTML page</p> 
+</div>
+
+<div class="container">
+  <h3>What ae Events?</h3>
+  <p>All the different visitors' actions that a web page can respond to are called events.</p>
+  <p>An event represents the precise moment when something happens</p>
+  <p>Examples:</p>
+  <ul>
+    <li>moving a mouse over an element</li>
+    <li>selecting a radio button</li>
+    <li>clicking on an element</li>
+  </ul>
+  <p>The term <b>"fires/fired"</b> is often used with events</p>
+  <p>Here are some common DOM events:</p>
+  <table class="table table-bordered table-hover">
+    <thead><tr>
+      <th>Mouse Events</th>
+      <th>Keyboard Events</th>
+      <th>Form Events</th>
+      <th>Document/Window Events</th>
+    </tr></thead>
+
+    <tbody>
+      <tr>
+        <td>click</td>
+        <td>keypress</td>
+        <td>submit</td>
+        <td>load</td>
+      </tr>
+
+      <tr>
+        <td>dbclick</td>
+        <td>keydown</td>
+        <td>change</td>
+        <td>resize</td>
+      </tr>
+
+      <tr>
+        <td>mouseenter</td>
+        <td>keyup</td>
+        <td>focus</td>
+        <td>scroll</td>
+      </tr>
+
+      <tr>
+        <td>mouseleave</td>
+        <td></td>
+        <td>blur</td>
+        <td>unload</td>
+      </tr>
+
+      <tr>
+        <td>hover</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <h3>jQuery Syntax For Event Methods</h3>
+  <p>In jQuery, most DOM events have an equivalent jQuery method.</p>
+  <p>To asign a click event to all paragraphs on a page, you can do this:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">.click();</span>
+  </div>
+  <p>The next step is to define what should happen when the event fires. You must pass a function to the event:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">.click(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:lightgray">&nbsp&nbsp// action goes here!!</span><br>
+    <span style="color:white">});</span>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Commonly Used jQuery Event Methods</h3>
+  <p><b>$(document).ready()</b></p>
+  <p>The <code>$(document).ready()</code> method allows us to execute a function when the document is fully loaded. This event is already explained in the <u>jQuery Syntax</u> chapter</p>
+
+  <p><b>click()</b></p>
+  <p>The <code>click()</code> method attaches an event handler function to an HTML element</p>
+  <p>The function is executed when the user clicks on the HTML element</p>  
+  <p>The following example says: When a click event fires on a <code>&ltp&gt</code> element; hide the current &ltp&gt</code> element:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">.click(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).hide();</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>dblclick()</b></p>
+  <p>The <code>dblclick()</code> method attaches an event handler function to an HTML element</p>
+  <p>The function is executed when the user double-clicks on the HTML element</p>  
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">.dblclick(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).hide();</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>mouseenter()</b></p>
+  <p>The <code>mouseenter()</code> method attaches an event handler function to an HTML element</p>
+  <p>The function is executed when the mouse pointer enters the HTML element</p>  
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">.mouseenter(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbspalert(</span>
+    <span style="color:green">"You enter p1!"</span>
+    <span style="color:white">);</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>mouseleave()</b></p>
+  <p>The <code>mouseleave()</code> method attaches an event handler function to an HTML element</p>
+  <p>The function is executed when the mouse pointer enters the HTML element</p>  
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">.mouseleave(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbspalert(</span>
+    <span style="color:green">"Bye! You now leave p1!"</span>
+    <span style="color:white">));</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>mousedown()</b></p>
+  <p>The <code>mousedown()</code> method attaches an event handler function to an HTML element</p>
+  <p>The function is executed, when the left, middle or right mouse button is presed down, while the mouse is over the HTM element</p>  
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">.mousedown(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbspalert(</span>
+    <span style="color:green">"Mouse down over p1!"</span>
+    <span style="color:white">));</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>mouseup()</b></p>
+  <p>The <code>mouseup()</code> method attaches an event handler function to an HTML element</p>
+  <p>The function is executed, when the left, middle or right mouse button is released, whiel the mouse is over the HTML element:</p>  
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">.mouseup(</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbspalert(</span>
+    <span style="color:green">"Mouse up over p1!"</span>
+    <span style="color:white">));</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>hover()</b></p>
+  <p>The <code>hover()</code> method attaches 2 functions and is a combination of hte <code>mouseenter()</code> and <code>mouseleave()</code> mthods</p>
+  <p>The 1<sup>st</sup> function is executed when the mouse enters the HTML element, and the second function is executed when the moue leaves the HTML element:</p>  
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">.hover(</span><br>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbspalert(</span>
+    <span style="color:green">"You enter p1!"</span>
+    <span style="color:white">);<br>},</span><br>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbspalert(</span>
+    <span style="color:green">"Bye! You now leave p1!"</span>
+    <span style="color:white">);</span><br>
+    <span style="color:white">});</span>
+  </div>
+
+  <p><b>focus()</b></p>
+  <p>The <code>focus()</code> method attaches an event handler function to an HTML form field</p>
+  <p>The function is executed when the form field gets focus:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"input"</span>
+    <span style="color:white">.focus(</span><br>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).css(</span>
+    <span style="color:green">"background-color"</span>
+    <span style="color:white">, </span>
+    <span style="color:green">"#cccccc"</span>
+    <span style="color:white">);<br>);</span>
+  </div>
+
+  <p><b>blur()</b></p>
+  <p>The <code>blur()</code> method attaches an event handler function to an HTML form field</p>
+  <p>The function is executed when the form field loses focus:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"input"</span>
+    <span style="color:white">.focus(</span><br>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).css(</span>
+    <span style="color:green">"background-color"</span>
+    <span style="color:white">, </span>
+    <span style="color:green">"#cccccc"</span>
+    <span style="color:white">);<br>);</span>
+  </div>
+
+  <p><b>on()</b></p>
+  <p>The <code>on()</code> method attaches one or more event handlers for the selected elements</p>
+  <p>Attach a click event to a <code>&ltp&gt</code> element:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">.on(</span>
+    <span style="color:green">"click"</span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).hide();</span>
+    <span style="color:white">});</span>
+  </div>
+  <p>Attach multiple event handlers to <code>&ltp&gt</code> element</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$&lt</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">.on({</span><br>
+    <span style="color:green">mouseenter: </span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).css(</span>
+    <span style="color:green">"background-color", "lightgray";</span>
+    <span style="color:white">);<br>},</span><br>
+
+    <span style="color:green">mouseleave: </span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).css(</span>
+    <span style="color:green">background-color", "lightblue";</span>
+    <span style="color:white">);<br>},</span><br>
+
+    <span style="color:green">click: </span>
+    <span style="color:pink">function(){</span><br>
+    <span style="color:white">&nbsp&nbsp$(</span>
+    <span style="color:pink">this</span>
+    <span style="color:white">).css(</span>
+    <span style="color:green">background-color", "lightyellow";</span>
+    <span style="color:white">);<br>},</span><br>
+  </div>
+</div>
+</body>
+</html>

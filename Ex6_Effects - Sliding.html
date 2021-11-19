@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  .flip, .panel {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+  }
+  .panel {
+    padding: 50px;
+    margin-bottom: 0px;
+  }
+  
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#slidedown").click(function(){
+      $("#ex1").slideDown("slow");
+    });
+    $("#slideup").click(function(){
+      $("#ex1").slideUp("slow");
+    });
+    $("#slidetoggle").click(function(){
+      $("#ex2").slideToggle("slow");
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery Sliding Methods</h3>
+  <p>With jQuery, you can create a sliding effect on elements</p>
+  <p>jQuery has th following slide methods:</p>
+  <ul>
+    <li><code>slideDown()</code>
+    <li><code>slideUp</code>
+    <li><code>slideToggle</code>
+  </ul><br>
+
+  <p><b>Syntax</b></b>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).slideDown(speed, callback);</span><br>
+    <span style="color:white">$(selector).slideUp(speed, callback);</span><br>
+    <span style="color:white">$(selector).slideToggle(speed, callback);</span><br>
+  </div> 
+  <p>The <b>optional</b> speed parameter specifies the duration of the effect. It can take the following values: <code>"slow"</code>, <code>"fast</code>, or millisecond</p>
+  <p>The <b>optional</b> callback parameter is a function to be executed AFTER the fading completes</p><br>
+</div>
+
+<div class="container">
+  <h3>The jQuery <code>slideUp</code> & <code>slideDown()</code> method</h3>
+  <div class="flip" id="slidedown">Click to slide down the panel</div>
+  <div class="panel" id="ex1">Hello World</div>
+  <div class="flip" id="slideup">Click to slide up the panel</div>
+</div>
+
+<div class="container">
+  <h3>The jQuery <code>slideToggle</code> method</h3>
+  <p>The jQuery <code>slideToggle()</code> method toggles between the <code>slideDown()</code> and <code>slideUp</code> methods</p>
+  <p>If the elements have been slid down, <code>slideToggle</code> will slide them up</p>
+  <p>If the elements have been slid up, <code>slideToggle</code> will slide them down</p>
+  <div class="flip" id="slidetoggle">Click to slide toggle the panel</div>
+  <div class="panel" id="ex2">Hello World</div>
+</div>
+</body>
+</html>

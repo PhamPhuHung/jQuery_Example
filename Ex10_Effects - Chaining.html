@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  .box {
+    background-color:#98bf21;
+    width:100px;
+    height:100px;
+    position: absolute;
+    text-align: center;
+  }
+  .flip, .panel {
+    color: white;
+    background-color: #555;
+    width: 100%;
+    margin: 0; 
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #333;
+  }
+  
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#btn1").click(function(){
+      $("#ex1").css("color", "red").slideUp(2000).slideDown(2000);
+    });
+    $("#reset1").click(function(){
+      $("#ex1").css("color", "black");
+    });
+
+    $("#btn2").click(function(){
+      $("#ex2")
+        .css("color", "red")
+        .slideUp(2000)
+        .slideDown(2000);
+    });
+    $("#reset2").click(function(){
+      $("#ex2").css("color", "black");
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery - Chaining</h3>
+  <p>Until now we have been writing jQuery statements one at a time (one after the other).</p>
+  <p>However, there is a techique called chaining, that allows us to run multiple jQuery commands, one after the other, on the same element(s).</p>
+  <p><b>Tip:</b> This way, browsers do not have to find the same element(s) more than once.</p>
+  <p>To chain an action, you simply append the action to the previous action.</p>
+  <p>The following example chains together the <code>css()</code>, <code>slideUp</code>, and <code>slideDown</code> methods. The "p1" element first changes to red, then it slides up, and then it slides down:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">).css(</span>
+    <span style="color:green">"color", "red"</span>
+    <span style="color:white">).slideUp(</span>
+    <span style="color:lightblue">2000</span>
+    <span style="color:white">).slideDown(</span>
+    <span style="color:lightblue">2000</span>
+    <span style="color:white">);</span>
+  </div><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <button type="button" class="btn btn-info" id="btn1">Click me</button>
+        <button type="button" class="btn btn-info" id="reset1">Reset</button>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <p id="ex1">jQuery is fun!</p>
+    </div>
+  </div><br><br>
+
+  <p style="padding:30px; background-color:lightyellow"><b>Tip:</b> When chaining, the line of code could become quite long. However, jQuery is not very strict on the syntax; you can format it like you want, including line breaks and indentations</p><br>
+
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(</span>
+    <span style="color:green">"#p1"</span>
+    <span style="color:white">)<br>&nbsp&nbsp.css(</span>
+    <span style="color:green">"color", "red"</span>
+    <span style="color:white">)<br>&nbsp&nbsp.slideUp(</span>
+    <span style="color:lightblue">2000</span>
+    <span style="color:white">)<br>&nbsp&nbsp.slideDown(</span>
+    <span style="color:lightblue">2000</span>
+    <span style="color:white">);</span>
+  </div><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <button type="button" class="btn btn-info" id="btn2">Click me</button>
+        <button type="button" class="btn btn-info" id="reset2">Reset</button>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <p id="ex2">jQuery is fun!</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

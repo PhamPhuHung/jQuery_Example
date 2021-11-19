@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#hide").click(function(){
+      $("#ex1").hide();
+    });
+    $("#show").click(function(){
+      $("#ex1").show();
+    });
+
+    $("#hide2").click(function(){
+      $("#ex2").hide("slow");
+    });
+    $("#show2").click(function(){
+      $("#ex2").show("slow");
+    });
+
+    $("#toggle").click(function(){
+      $("#ex3").toggle(1000);
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <p>Hide, Show, Toggle, Slide, Fade, and Animate. Wow</p> 
+</div>
+
+<div class="container">
+  <h3>jQuery hide() and show()</h3>
+  <p>With jQuery, you an hide and show HTML elements with the <code>hide</code> and <code>show</code> methods</p>
+  <p id="ex1">If you click on "Hide" button, I will disappear</p>
+  <button type="button" id="hide">Hide</button>
+  <button type="button" id="show">Show</button><br><br>
+
+  <p><b>Syntax</b></b>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).hide(speed, callback);</span><br>
+    <span style="color:white">$(selector).show(speed, callback);</span><br>
+  </div> 
+  <p>The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: <code>"slow"</code>, <code>"fast"</code>, or milliseconds</p>
+  <p>The optional callback parameter is a function to be executed after the <code>hide</code> or <code>show()</code> method completes (you will learn more about callback functions in a later chapter)</p>
+  <p>The following example demonstrates the speed parameter</p>
+  <p id="ex2">If you click on "Hide", I will disapear slowly</p>
+  <button id="hide2" type="button">Hide</button>
+  <button id="show2" type="button">Show</button>
+</div>
+
+<div class="container">
+  <h3>jQuery toggle</h3>
+  <p>You can also toggle between hiding and showing an element with the <code>toggle()</code> method</p>
+  <p>Shown elements are hidden and hidden elements are shown</p><br>
+
+  <p><b>Syntax</b></b>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).hide(speed, callback);</span><br>
+    <span style="color:white">$(selector).show(speed, callback);</span><br>
+  </div> 
+  <p>The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: <code>"slow"</code>, <code>"fast"</code>, or milliseconds</p>
+  <p>The optional callback parameter is a function to be executed after the <code>hide</code> or <code>show()</code> method completes (you will learn more about callback functions in a later chapter)</p>
+  <p id="ex3">If you click on "Toggle" button, I will disapear and appear</p>
+  <button type="button" id="toggle">Toggle</button>
+</div>
+</body>
+</html>

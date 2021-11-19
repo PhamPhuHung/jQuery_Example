@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h3>More Examples of jQuery Selectors</h3>
+  <table class="table table-striped table-bordered">
+    <thead><tr>
+      <th>Syntax</th>
+      <th>Description</th>
+    </tr></thead>
+
+    <tbody>
+      <tr>
+        <td>$("*")</td>
+        <td>Selects all elements</td>
+      </tr>
+
+      <tr>
+        <td>$(this)</td>
+        <td>Selects the current HTML element</td>
+      </tr>
+
+      <tr>
+        <td>$("p.intro")</td>
+        <td>Selects all &ltp&gt elements with class="intro"</td>
+      </tr>
+
+      <tr>
+        <td>$("p:first")</td>
+        <td>Selects all the first &ltp&gt elements</td>
+      </tr>
+
+      <tr>
+        <td>$("ul li:first")</td>
+        <td>Selects the first &ltli&gt element of the first &ltli&gt</td>
+      </tr>
+
+      <tr>
+        <td>$("ul li:first")</td>
+        <td>Selects the first &ltli&gt element of the first &ltul&gt</td>
+      </tr>
+
+      <tr>
+        <td>$("ul li:first-child")</td>
+        <td>Selects the first &ltli&gt element of every &ltul&gt</td>
+      </tr>
+
+      <tr>
+        <td>$("[href]")</td>
+        <td>Selects all elements with an href attribute</td>
+      </tr>
+
+      <tr>
+        <td>$("a[href='_blank']")</td>
+        <td>Selects all &lta&gt elements with a target attribute value equal to "_blank"</td>
+      </tr>
+
+      <tr>
+        <td>$("a[href!='_blank']")</td>
+        <td>Selects all &lta&gt elements with a target attribute value NOT equal to "_blank"</td>
+      </tr>
+
+      <tr>
+        <td>$(":button")</td>
+        <td>Selects all &ltbutton&gt elements and &ltinput&gt elements of type="button"</td>
+      </tr>
+
+      <tr>
+        <td>$("tr:even")</td>
+        <td>Selects even &lttr&gt elements</td>
+      </tr>
+
+      <tr>
+        <td>$("tr:odd")</td>
+        <td>Selects odd &lttr&gt elements</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container">
+  <h3>Functions In a Separate File</h3>
+  <p>If you website contains a lot of pages, and you want your jQuery functions to be easy to maintain, you can put your jQuery functions in a separate .js file.</p>
+  <p>When we demonstrate jQuery in this tutorial, the functions are added directly into the <code>&lthdead</code> section. However, sometimes it is preferable to place them in a separate file, like this (use the src attribute to refer to the .js file)</p>
+</div>
+</body>
+</html>

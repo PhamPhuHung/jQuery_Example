@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  .box {
+    background-color:#98bf21;
+    width:100px;
+    height:100px;
+    position: absolute;
+    text-align: center;
+  }
+  .flip, .panel {
+    color: white;
+    background-color: #555;
+    width: 100%;
+    margin: 0; 
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #333;
+  }
+  #ex1_div, #ex2_div {
+    background-color: yellow;
+    border: 1px solid black;
+    height: 80px;
+    width: 100%;
+    margin: 5px 0;
+  }
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#ex1_remove").click(function(){
+      $("#ex1_div").remove();
+      $("#ex1_reset").removeAttr("disabled");
+    });
+    $("#ex1_reset").click(function(){
+      var div = "<div id='ex1_div'>This is some text in the div<p>This is a <code>&ltp&gt</code> in the div</p><p>This is another <code>&ltp&gt</code> in the div</p></div>";
+      $("#ex1_container").prepend(div);
+      $("#ex1_reset").attr("disabled", true);
+    });
+
+    $("#ex2_remove").click(function(){
+      $("#ex2_div").empty();
+      $("#ex2_reset").removeAttr("disabled");
+    });
+    $("#ex2_reset").click(function(){
+      var div = "This is some text in the div<p>This is a <code>&ltp&gt</code> in the div</p><p>This is another <code>&ltp&gt</code> in the div</p>";
+      $("#ex2_div").prepend(div);
+      $("#ex2_reset").attr("disabled", true);
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery - Add Elements</h3>
+  <p>With jQuery, it is easy to remove existing elements/content</p>
+</div>
+<div class="container">
+  <h3>Remove Elements / Content</h3>
+  <p>To remove elements and content, there are mainly 2 jQuery methods</p>
+  <ul>
+    <li><code>remove()</code> - Removes the selected element (and its child elements)</li>
+    <li><code>empty()</code> - Removes the child elements from the selected elements</li>
+  </ul>
+</div>
+
+<div class="container">
+  <h3>jQuery remove() Method</h3>
+  <p>The jQuery <code>remove()</code> removes the selected element(s) and its child elements</p>
+  <div class="container" style="border:1px solid #aaa" id="ex1_container">
+    <div id="ex1_div">
+      This is some text in the div<br>
+      <p>This is a <code>&ltp&gt</code> in the div</p>
+      <p>This is another <code>&ltp&gt</code> in the div</p>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex1_remove">Remove <code>&ltdiv&gt</code> element</button>
+      <button type="button" class="btn btn-success" id="ex1_reset" disabled>Reset <code>&ltdiv&gt</code> element</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>jQuery empty() Method</h3>
+  <p>The jQuery <code>empty()</code> removes the child elements ò the selected element(s)</p>
+  <div class="container" style="border:1px solid #aaa" id="ex1_container">
+    <div id="ex2_div">
+      This is some text in the div<br>
+      <p>This is a <code>&ltp&gt</code> in the div</p>
+      <p>This is another <code>&ltp&gt</code> in the div</p>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex2_remove">Remove <code>&ltdiv&gt</code> element</button>
+      <button type="button" class="btn btn-success" id="ex2_reset">Reset <code>&ltdiv&gt</code> element</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Filter the Elements to be Removed</h3>
+  <p>The jQuery <code>remove()</code> also accepts one parameter, which allows you to filter the elements to be remvoed.</p>
+  <p>The parameter can be any of hte jQuery selector syntaxes</p>
+  <p>The following example removes all <code>&ltp&gt</code> elements with <code>class="test"</code></p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">).remove(</span>
+    <span style="color:green">".test"</span>
+    <span style="color:white">);</span>
+  </div> <br>
+
+  <p>The following example removes all <code>&ltp&gt</code> elements with <code>class="test"</code> and <code>class="demo"</code></p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(</span>
+    <span style="color:green">"p"</span>
+    <span style="color:white">).remove(</span>
+    <span style="color:green">".test"</span>
+    <span style="color:white">, </span>
+    <span style="color:green">".demo"</span>
+    <span style="color:white">);</span>
+  </div> <br>
+</div>
+</body>
+</html>

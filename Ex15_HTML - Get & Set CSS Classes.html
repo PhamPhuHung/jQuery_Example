@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  .blue {
+    color: blue;
+  }
+  .important {
+    font-weight: bold;
+  }
+  </style>
+
+  <script>
+  $(document).ready(function(){
+    $("#ex1_addclass").click(function(){
+      $("#ex1_p1, #ex1_p2").addClass("blue");
+      $("#ex1_div1").addClass("important");
+      $("#ex1_div2").addClass("blue important");
+    });
+    $("#ex1_removeclass").click(function(){
+      $("#ex1_p1, #ex1_p2").removeClass("blue");
+      $("#ex1_div1").removeClass("important");
+      $("#ex1_div2").removeClass("blue important");
+    });
+
+    $("#ex2_addclass").click(function(){
+      $("#ex2_p1, #ex2_p2").toggleClass("blue");
+      $("#ex2_div1").toggleClass("important");
+      $("#ex2_div2").toggleClass("blue important");
+    });
+
+    $("#ex3_css").click(function(){
+      alert("Color: " + $(".p1").css("color"));
+    });
+  
+    $("#ex4_css1").click(function(){
+      $(".p2").css("color", "red");
+    });
+    $("#ex4_css2").click(function(){
+      $(".p2").css("color", "black");
+    });
+
+    $("#ex5_css1").click(function(){
+      $(".p3").css({
+        "color": "red",
+        "font-size": "2em"});
+    });
+    $("#ex5_css2").click(function(){
+      $(".p3").css({
+        "color": "black",
+        "font-size": "1em"});
+    });
+  });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery Manipulating CSS</h3>
+  <p>jQuery has several methods for CSS manipulation. We will look at the following methods:</p>
+  <ul>
+    <li><code>addClass()</code> - Adds one or more classes to the selected elements</li>
+    <li><code>removeClass()</code> - Removes one or more classes to the selected elements</li>
+    <li><code>toggleClass()</code> - Toggle between adding/removing classes the selected elements</li>
+    <li><code>css()</code> - Set or returns the style attribute</li>
+  </ul>
+</div>
+
+<div class="container">
+  <h3>jQuery addClass() & removeClass() Method</h3>
+  <p>The following example shows how to add/remove class attributes to different elements. Of course you can select multiple elements, when adding classes:</p>
+  <div class="container" style="border:1px solid #aaa; padding:5px">
+    <p id="ex1_p1">This is the 1<sup>st</sup> paragraph</p>
+    <p id="ex1_p2">This is the 2<sup>nd</sup> paragraph</p>
+    <div id="ex1_div1">This is some important div</div>
+    <div id="ex1_div2">This is some important blue div</div>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex1_addclass">Add classes to elements</button>
+      <button type="button" class="btn btn-success" id="ex1_removeclass">Remove classes from elements</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>jQuery toggleClass() Method</h3>
+  <p>The following example will show how to use the jQuery <code>toggleClass()</code> method. This method toggles between adding/removing classes from the selected elements:</p>
+  <div class="container" style="border:1px solid #aaa; padding:5px">
+    <p id="ex2_p1">This is the 1<sup>st</sup> paragraph</p>
+    <p id="ex2_p2">This is the 2<sup>nd</sup> paragraph</p>
+    <div id="ex2_div1">This is some important div</div>
+    <div id="ex2_div2">This is some important blue div</div>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex2_addclass">Toggles Classes</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>jQuery css() Method</h3>
+  <p>The <code>css()</code> method sets or returns one or more style properties for the selected elements
+</div>
+
+<div class="container">
+  <h3>Return a CSS Property</h3>
+  <p>To return the value of a specified CSS property, use the following syntax:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).css("propertyname");</span>
+  </div> 
+  <p>The following example will return the color value of the FIRST matched element:</p>
+  <div class="container" style="border:1px solid #aaa; padding:5px">
+    <p class="p1" style="color:red">This is a paragraph</p>
+    <p class="p1" style="color:green">This is a paragraph</p>
+    <p class="p1" style="color:blue">This is a paragraph</p>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex3_css">Return color</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Set a CSS Property</h3>
+  <p>To set a specified CSS property, use the following syntax:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).css("propertyname", "value");</span>
+  </div> 
+  <p>The following example will set the color valur for ALL matched elements:</p>
+  <div class="container" style="border:1px solid #aaa; padding:5px">
+    <p class="p2">This is a paragraph</p>
+    <p class="p2">This is a paragraph</p>
+    <p class="p2">This is a paragraph</p>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex4_css1">Change color</button>
+      <button type="button" class="btn btn-info" id="ex4_css2">Reset color</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Set Multiple CSS Properties</h3>
+  <p>To set multiple CSS properties, use the following syntax:</p>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).css({<br>
+      &nbsp&nbsp"propertyname": "value",<br>
+      &nbsp&nbsp"propertyname": "value"<br>
+    );</span>
+  </div>
+  <div class="container" style="border:1px solid #aaa; padding:5px">
+    <p class="p3">This is a paragraph</p>
+    <p class="p3">This is a paragraph</p>
+    <p class="p3">This is a paragraph</p>
+    <div class="form-group">
+      <button type="button" class="btn btn-info" id="ex5_css1">Change color and font-size</button>
+      <button type="button" class="btn btn-info" id="ex5_css2">Reset</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

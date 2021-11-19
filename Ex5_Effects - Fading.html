@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+  .table-striped tbody tr:nth-child(odd) {
+    background-color: lightgray;
+  }
+  .box {
+    width:80px;
+    height:80px;
+    margin:20px;
+    display:inline-block;
+  }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $("#fadeout").click(function(){
+        $("#box1").fadeOut();
+        $("#box2").fadeOut("slow");
+        $("#box3").fadeOut(3000);
+      });
+      $("#fadein").click(function(){
+        $("#box1").fadeIn();
+        $("#box2").fadeIn("slow");
+        $("#box3").fadeIn(3000);
+      });
+
+      $("#fadetoggle").click(function(){
+        $("#box4").fadeToggle();
+        $("#box5").fadeToggle("slow");
+        $("#box6").fadeToggle(3000);
+      });
+
+      $("#fadeto").click(function(){
+        $("#box7").fadeTo(300, 0.7);
+        $("#box8").fadeTo(800, 0.4);
+        $("#box9").fadeTo(1400, 0.15);
+      });
+      $("#unfade").click(function(){
+        $("#box7").fadeTo(300, 1);
+        $("#box8").fadeTo(800, 1);
+        $("#box9").fadeTo(1400, 1);
+      });
+    });
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <h3>jQuery Fading Methods</h3>
+  <p>With jQuery, you can fade an element in and out of visibility</p>
+  <p>jQuery has th following fde methods:</p>
+  <ul>
+    <li><code>fadeIn()</code>
+    <li><code>fadeOut()</code>
+    <li><code>fadeToggle()</code>
+    <li><code>fadeTo()</code>
+  </ul><br>
+
+  <p><b>Syntax</b></b>
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).fadeIn(speed, callback);</span><br>
+    <span style="color:white">$(selector).fadeOut(speed, callback);</span><br>
+    <span style="color:white">$(selector).fadeToggle(speed, callback);</span><br>
+  </div> 
+  <p>The <b>optional</b> speed parameter specifies the duration of the effect. It can take the following values: <code>"slow"</code>, <code>"fast</code>, or millisecond</p>
+  <p>The <b>optional</b> callback parameter is a function to be executed AFTER the fading completes</p><br>
+
+  <div style="border:20px solid lightgray; background-color:#112; padding:10px">
+    <span style="color:white">$(selector).fadeTo(speed, opacity, callback);</span><br>
+  </div> 
+  <p>The <b>required</b> speed parameter specifies the duration of the effect. It can take the following values: "slow", "fast", or milliseconds</p>
+  <p>The <b>required</b> opacity parameter specifies fading to a given opacity (values between o & 1)</p>
+  <p>The <b>optional</b> callback parameter is a function to be executed after the function completed</p>
+</div>
+
+<div class="container">
+  <h3>jQuery <code>fadeIn()</code> & <code>fadeOut</code> Method</h3>
+  <p>The jQuery <code>fadeIn</code> method is used to fade in a hidden element</p>
+  <p>The jQuery <code>fadeOut</code> method is used to fade out a visible element<br>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <button class="btn btn-info" type="button" id="fadeout">Fade Out</button>
+        <button class="btn btn-info" type="button" id="fadein">Fade In</button>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="box" id="box1" style="background-color:red"></div>
+      <div class="box" id="box2" style="background-color:green"></div>
+      <div class="box" id="box3" style="background-color:blue"></div><br>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>jQuery fadeToggle</h3>
+  <p>The jQuery <code>fadeToggle</code> method toggles between the <code>fadeIn()</code> & <code>fadeOut</code> methods</p>
+  <p>If the elements are faded out, the <code>fadeToggle</code> will fade them in</p>
+  <p>If the elements are faded in, the <code>fadeToggle</code> will fade them out</p>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <button class="btn btn-info" type="button" id="fadetoggle">Fade Toggle</button>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="box" id="box4" style="background-color:red"></div>
+      <div class="box" id="box5" style="background-color:green"></div>
+      <div class="box" id="box6" style="background-color:blue"></div><br>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>jQuery fadeTo()</h3>
+  <p>The <code>fadeTo()</code> method allows fading to a given opacity (value between 0 & 1)</p>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="form-group">
+        <button type="button" id="fadeto" class="btn btn-info">Fade the boxes</button>
+        <button type="button" id="unfade" class="btn btn-info">UnFade the boxes</button>
+      </div>
+    </div>
+    <div class="col-sm-7">
+      <div class="box" id="box7" style="background-color:red"></div>
+      <div class="box" id="box8" style="background-color:green"></div>
+      <div class="box" id="box9" style="background-color:blue"></div><br>
+    </div>
+  </div>
+</div>
+</body>
+</html>
